@@ -1,0 +1,17 @@
+{
+  "display": {
+    "annotations": {
+      "function":     [ "description", "parameter",             "return",   "throw",  "example", "require", "usedby", "see", "todo", "since", "link", "author"],
+      "mixin":        [ "description", "parameter", "content",  "output",   "throw",  "example", "require", "usedby", "see", "todo", "since", "link", "author"],
+      "placeholder":  [ "description",                                      "throw",  "example", "require", "usedby", "see", "todo", "since", "link", "author"],
+      "variable":     [ "description",              "type",     "property",           "example", "require", "usedby", "see", "todo", "since", "link", "author"],
+      "css":          [ "description",                                                "example",                      "see", "todo", "since", "link", "author"]
+    },
+    "access": ["public", "private"],
+    "alias": false,
+    "watermark": true
+  },
+  "groups": {
+    "undefined": "General"
+  }
+}

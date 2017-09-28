@@ -1,0 +1,9 @@
+@mixin yiq($color, $dark-text: $black, $light-text: white) {
+  $yiq: ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)) / 1000;
+  @if yiq>=128 {
+  	color: $dark-text;
+  }
+  @else {
+  	color: $light-text;
+  }
+}

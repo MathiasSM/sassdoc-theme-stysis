@@ -1,0 +1,46 @@
+{
+	"name": "sassdoc-theme-stysis",
+	"description": "SassDoc theme for API + Style Guide generation.",
+	"title": "SassDoc Theme Stysis",
+	"author": "Mathias San Miguel",
+	"version": "0.1.0",
+	"keywords": [
+		"sassdoc-theme"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MathiasSM/sassdoc-theme-stysis.git"
+	},
+	"license": "Apache-2.0",
+	"files": [],
+	"dependencies": {
+		"babel-runtime": "^6.22.0",
+		"chroma-js": "^1.2.2",
+		"es6-denodeify": "^0.1.0",
+		"es6-promise": "^4.0.5",
+		"extend": "^3.0.0",
+		"fs-extra": "^2.0.0",
+		"html-minifier": "^3.3.1",
+		"sassdoc-extras": "^2.4.0",
+		"swig": "1.4.0",
+		"swig-extras": "0.0.1"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.22.2",
+		"babel-plugin-transform-runtime": "^6.22.0",
+		"babel-preset-latest": "^6.22.0",
+		"standard": "^8.6.0",
+		"uglify-js": "^2.4.15"
+	},
+	"scripts": {
+		"compile-sass": "sass --update scss:assets/css --style compressed --sourcemap=none",
+		"compile-sass:dev": "sass --update scss:assets/css --style compressed --sourcemap=inline",
+		"clean": "rm -rf dist assets/js/main.min.js assets/css",
+		"compile-js": "rm -rf dist; babel src -d dist",
+		"minify-js": "cat assets/js/** | uglifyjs > assets/js/main.min.js",
+		"minify-js:dev": "cat assets/js/** > assets/js/main.min.js",
+		"rebuild": "rm -rf node_modules && npm install",
+		"build": "npm run clean && npm run compile-js && npm run minify-js && npm run compile-sass",
+		"build:dev": "npm run clean && npm run compile-js && npm run minify-js:dev && npm run compile-sass:dev"
+	}
+}
